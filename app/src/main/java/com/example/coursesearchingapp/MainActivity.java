@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,22 +48,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void insert()
-    {
-        try
-        {
+    public void insert() {
+        try {
             String name = ed1.getText().toString();
             String course = ed2.getText().toString();
             String fee = ed3.getText().toString();
 
-            SQLiteDatabase db = openOrCreateDatabase("SliteDb",Context.MODE_PRIVATE,null);
+
+            if (course.length() == 0 || name.length() == 0 || fee.length()==0) {
+                Toast.makeText(getApplicationContext(), "please fill the details", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
+
+
+
+                SQLiteDatabase db = openOrCreateDatabase("SliteDb", Context.MODE_PRIVATE, null);
             db.execSQL("CREATE TABLE IF NOT EXISTS records(id INTEGER PRIMARY KEY AUTOINCREMENT,name VARCHAR,course VARCHAR,fee VARCHAR)");
 
             String sql = "insert into records(name,course,fee)values(?,?,?)";
             SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1,name);
-            statement.bindString(2,course);
-            statement.bindString(3,fee);
+            statement.bindString(1, name);
+            statement.bindString(2, course);
+            statement.bindString(3, fee);
             statement.execute();
             Toast.makeText(this,"Record addded",Toast.LENGTH_LONG).show();
 
@@ -77,3 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+
+
+

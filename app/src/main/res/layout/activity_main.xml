@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/blue"
+    android:background="@drawable/max"
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:background="@drawable/cc"
-        android:layout_marginTop="-190dp"/>
 
    <LinearLayout
        android:layout_width="wrap_content"
@@ -25,8 +20,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="@string/course_registration"
-           android:textColor="@color/purple_700"
-           android:layout_marginTop="80dp"
+           android:textColor="#5813F3"
            android:textSize="40sp"/>
    </LinearLayout>
 
@@ -40,7 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name"
-            android:textColor="@color/black"
+            android:textColor="#131313"
+            android:layout_marginTop="10dp"
             android:textSize="20sp"/>
 
         <EditText
@@ -49,7 +44,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:id="@+id/name"
-            android:text="@string/aji"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:hint="@string/enter_your_name"
             android:textAlignment="center"/>
     </LinearLayout>
 
@@ -72,7 +69,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:id="@+id/course"
-            android:text="@string/java"
+            android:inputType="textPhonetic"
+            android:hint="Enter your Course"
             android:textAlignment="center"/>
     </LinearLayout>
 
@@ -94,7 +92,8 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:ems="10"
-            android:text="@string/_800"
+            android:hint="Enter fee"
+            android:inputType="number"
             android:id="@+id/Fee"
             android:textAlignment="center"/>
 
@@ -114,7 +113,8 @@
             android:layout_weight="1"
             android:id="@+id/btn1"
             android:text="@string/ok"
-            android:layout_marginTop="10dp"/>
+            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="15dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -122,8 +122,9 @@
             android:layout_weight="1"
             android:id="@+id/btn2"
             android:text="@string/view"
-            android:backgroundTint="@color/black"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginStart="15dp"
+            android:backgroundTint="@color/teal_700"
+            android:layout_marginTop="15dp"/>
 
 
     </LinearLayout>
